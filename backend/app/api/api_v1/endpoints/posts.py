@@ -121,3 +121,4 @@ def delete_post(
         raise HTTPException(status_code=404, detail="Post not found")
     post = crud.crud_post.delete_post(db=db, post_id=id)
     return post
+

@@ -74,3 +74,6 @@ def debug_config():
         "ENV_VAR": os.environ.get("CLOUDINARY_URL"),
         "Cloudinary_Config": cloudinary.config().api_key if cloudinary.config().api_key else "Not Configured"
     }
+@router.get("/health", response_model=dict)
+def health_check():
+    return {"status": "ok"}
